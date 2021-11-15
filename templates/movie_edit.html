@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-{{ form.media }}
     <div class="container">
     <h1>Edit Movie</h1>
     <form method="POST" type="text" class="movie-form">{% csrf_token %}
