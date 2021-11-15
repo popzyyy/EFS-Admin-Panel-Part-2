@@ -32,14 +32,6 @@ from django.core.mail import EmailMessage
 def food_menu(request):
     return render(request, 'food_menu.html')
 
-class add_task(LoginRequiredMixin,generic.CreateView):
-    model = Movie
-    fields = '__all__'
-    def get_form(self):
-        form = super().get_form()
-        form.fields['task_due_date'].widget = DatePickerInput()
-        return form
-    template_name = 'movie_edit.html'
 
 class SignUpView(CreateView):
     form_class = SignUpForm
