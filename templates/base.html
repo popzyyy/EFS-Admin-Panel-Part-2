@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.square {
+  height: 50px;
+  width: 50px;
+  background-color: #555;
+}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+ .logo-image{
+    width: 15px;
+    height: 10px;
+    border-radius: 50%;
+
+
+}
+ .poop-fart{
+     margin-right: 10%;
+ }
+
+ navbar {
+    margin-bottom: 20px;
+    border-radius: 0;
+}
+table {
+    background-size: 3096px auto;
+    background-repeat: no-repeat;
+    background-image: url("https://sherwin.scene7.com/is/image/sw/color-swatch?_tparam_size=250,250&layer=comp&_tparam_color=C6CACA");
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+.solid {border-style: solid;}
+</style>
+<title>SAB Movies</title>
+<head>
+<!-- Navbar -->
+
+<navbar class="w3-top">
+
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a href="{% url 'application:home' %}">
+    <img src="{% static 'sa.png' %}" width="85" height="48" alt="" class="w3-bar-item w3-button w3-hide-small"></a>
+
+    <a href="{% url 'application:movie_list' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Movies</a>
+    <a href="{% url 'application:theater_list' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Theaters</a>
+    <a href="{% url 'application:showtime_list' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Showtimes</a>
+    <a href="{% url 'application:ticket_list' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Tickets</a>
+    <a href="{% url 'application:food_menu' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Menu</a>
+
+      {% if user.is_authenticated %}
+        <p class="w3-bar-item w3-button w3-hide-small">Username: {{ user.username }}</p>
+        <a href="{% url 'application:logout' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-red"> Logout </a>
+    {% else %}
+      <a href="{% url 'application:login' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-green"> Login </a>
+
+
+    {% endif %}
+    </div>
+  </div>
+</navbar>
+    <br><br><br>
+    <title></title>
+</head>
+   <body>
+    {% block content %}
+
+        {% endblock content %}
+        <!--Any JS files-->
+    </body>
+</html>

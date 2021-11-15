@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md">
+                     <div class="thumbnail">
+                                                  <div class="solid">
+        <div class="text-dark">
+            <div class="caption">
+
+                    <h2 style="padding-inline: 150Px"><b>Movies</b></h2>
+                <div class="col-md-4">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-body">
+
+    </div>
+    <div>
+            <table class="table table-bordered">
+
+            <thead>
+              <tr class="bg-primary">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Length</th>
+                <th>Genre</th>
+                <th>Rating</th>
+                <th>Date Available</th>
+                <th colspan="1">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for movie in movies %}
+                <tr>
+                    <td>{{ movie.movie_id }}</td>
+                    <td>{{ movie.name }}</td>
+                    <td>{{ movie.length_min }}</td>
+                    <td>{{ movie.genre }}</td>
+                    <td>{{ movie.rating }}</td>
+                    <td>{{ movie.available_date }}</td>
+
+
+                    <td><a href="{% url 'application:movie_edit' pk=movie.pk %}" class="w3-button w3-yellow">Edit</a>
+                     <a href="{% url 'application:movie_delete' pk=movie.pk %}"
+                           onclick="return confirm('Are you sure you want to delete {{ movie.name }}?')"
+                           class="w3-button w3-red">Delete</a>
+                    </td>
+
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+                    <div class="row">
+                 <a href="{% url 'application:movie_new' %}" class="row"><span
+                    class="w3-button w3-black">Add Movie</span></a>
+     </div>
+                    <div class="row">
+                        <a href=" {% url 'application:exportpdf' %}" class="w3-button w3-black">Export PDF</a>
+                        <a href=" {% url 'application:emailpdf' %}" class="w3-button w3-black">Email PDF</a>
+
+    </div>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock %}

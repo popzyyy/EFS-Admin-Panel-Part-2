@@ -1,0 +1,9 @@
+ {% block body_block %}
+    <h1>Delete {{ movie.id }}?</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a href="{% url 'application:movie_list' pk=movie.id %} ">Cancel</a>
+    </form>
+{% endblock %}

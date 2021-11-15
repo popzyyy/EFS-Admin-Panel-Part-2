@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container">
+    <h1>Edit Theater</h1>
+    <form method="POST" class="theater-form">{% csrf_token %}
+         {{ form|crispy }}
+        <br>
+        <button type="submit" class="save w3-button w3-black">Update</button>
+    </form>
+    </div>
+{% endblock %}
