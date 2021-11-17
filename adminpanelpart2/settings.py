@@ -39,13 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'application',
     'crispy_forms',
+    'fpdf',
 
 
 ]
 
-BOOTSTRAP4 = {
-    'include_jquery': True,
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
