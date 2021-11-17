@@ -3,7 +3,7 @@ import datetime
 from django.contrib.auth.decorators import login_required
 from django.views import View
 from django.contrib.auth import get_user_model
-from application.utils import render_to_pdf
+#from application.utils import render_to_pdf
 from .forms import *
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
