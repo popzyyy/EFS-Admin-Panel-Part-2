@@ -1,25 +1,10 @@
 import datetime
-
 from django.contrib.auth.decorators import login_required
-from django.views import View
-from django.contrib.auth import get_user_model
-#from application.utils import render_to_pdf
 from .forms import *
-from django.shortcuts import render, get_object_or_404
-from django.shortcuts import redirect
-from io import BytesIO
-from django.http import HttpResponse
-from django.template.loader import get_template
-from xhtml2pdf import pisa
 now = timezone.now()
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
-import io
-from django.http import FileResponse, HttpResponse
-from reportlab.pdfgen import canvas
-from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse_lazy
-from django.views import generic
+from django.http import FileResponse
 from django.contrib.auth import logout as bruh
 from django.shortcuts import render
 from django.urls import reverse_lazy
