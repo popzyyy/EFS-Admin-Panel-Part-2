@@ -6,7 +6,7 @@ from django.contrib import admin
 from django.urls import re_path
 from django.contrib import admin
 from django.urls import path, include
-from . import views
+from .views import *
 #from .views import GeneratePdf
 from .views import SignUpView
 
