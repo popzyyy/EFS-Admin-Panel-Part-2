@@ -1,5 +1,5 @@
 import datetime
-from bootstrap_datepicker_plus import DatePickerInput
+
 from django.contrib.auth.decorators import login_required
 from django.views import View
 from django.contrib.auth import get_user_model
