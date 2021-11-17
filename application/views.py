@@ -1,6 +1,7 @@
 import datetime
+from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-from .forms import *
+from .forms import MovieForm, TicketForm, ShowtimeForm, TheaterForm, SignUpForm
 now = timezone.now()
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
@@ -8,11 +9,10 @@ from django.http import FileResponse
 from django.contrib.auth import logout as bruh
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.views.generic import TemplateView
 from django.views.generic import CreateView
-from .forms import SignUpForm
-from fpdf import *
+from fpdf import FPDF
 from django.core.mail import EmailMessage
-
 
 def food_menu(request):
     return render(request, 'food_menu.html')
