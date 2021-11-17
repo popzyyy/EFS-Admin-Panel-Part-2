@@ -1,13 +1,7 @@
-from django.conf.urls import url
-from django.views.generic import TemplateView
-from django.views.generic.base import TemplateView
-from django.contrib.auth import views as auth_views
-from django.contrib import admin
+
 from django.urls import re_path
-from django.contrib import admin
-from django.urls import path, include
-from .views import *
-#from .views import GeneratePdf
+from django.urls import path
+from application import views
 from .views import SignUpView
 
 app_name = 'application'
